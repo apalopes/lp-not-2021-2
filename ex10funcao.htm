@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcao sem retorno</title>
+    <script>
+        /*
+        Função sem retorno 
+        São funçõs que desempenham uma tarefa, mas não retornam
+        um valor como resultado
+        */
+
+        //declaracao da funcao
+       function desenharTraco(tamanho){
+           for(let i = 1;i <= tamanho; i++) {
+               document.write('-')
+           }
+           document.write('<br>')
+       }
+       // chamadas de funcções. note que não há atribuição das chamadas 
+       // a variaveis, uma vez que a funcção retorna valor 
+       let x =  desenharTraco(50)
+       document.write(`O valor da variavel x é ${x}<br>`)
+       desenharTraco(30)
+       desenharTraco(75)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
