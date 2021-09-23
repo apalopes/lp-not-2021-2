@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3 _calculadora</title>
+    <script>
+        /* solicite ao usuário para informar dois numeros e um operadormatematico
+        você usará 3 prompt() um para cada numero e o  terceiro para o operador
+        aceite os seguintes operadores:
+        + => adição
+        - => Subtração
+        *, X , ou x => multiplicação
+        / ou : => divisão
+        Efetue o calculo apropriado de acordo com o operador informado
+        e informe o resultado usando document.write()
+        */
+
+        let num1 = Number(prompt("Informe o 1º numero:"))
+        let num2 = parseFloat(prompt("Informe o 2º Número"))
+        let oper = prompt("informe um operador: + ; - ; *, X , ou x ; / ou :")
+        // Validar dados
+        if(isNaN(num1) || isNaN(num2)) {
+            alert('Erro: Não é possivel fazer a operalçao')
+        }        
+        else if(oper === '+') {
+            document.write(num1 + num2)
+        }
+        else if(oper === '-') {
+            document.write(num1 - num2)
+        }
+        else if(oper === '*' || oper === 'X' || oper === 'x') {
+            document.write(num1 * num2)
+        }
+        else if(oper === '/' || oper === ':') {
+            document.write(num1 / num2)
+        }
+        else{
+            alert('Erro:Operação inválida')
+        }
+        document.write(num1 + ' ' + oper + ' ' + num2 + ' è igual a ' + resultado)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop</title>
+    <script>
+        /* Estrutura de repetição, também chamada   loops, são recursos
+        que toda linguagem de programação disponibiliza para possibilitar
+        a execução de uma instrução mais de uma vez
+        */
+
+        /* 1 lopp while
+        peça para o usuário infomara uma quantidade arbritária de numeros
+        ( um de cada vez) e quando ele informar o valor 0 ( zero) exiba
+        a soma dos numeros anteriores informados
+
+        */
+
+        let soma = 0, num
+        while (num !== 0) {
+            num = Number(prompt('Informe um numero para somar:'))
+
+            // só somar se o usuário informar um numero válido
+            if(! isNaN(num)) {
+                soma += num
+            }
+            
+        }
+        alert(`A soma dos numeros é ${soma}.`)
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
