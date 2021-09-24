@@ -15,7 +15,7 @@ repetida até que se consiga um dia válido.
        do {
            dia = parseInt(prompt("informe o dia do seu nascimento"))
        } while(isNaN(dia) || dia <1 || dia >31){
-       alert('ok.')  
+       
        }
 
 /* 3 - Solicite ao usuário que informe o mês do seu nascimento. Valide para que o mês
@@ -26,7 +26,7 @@ enquanto não obtiver um mês válido.
        do {
            mes = parseInt(prompt("informe o mes do seu nascimento"))
         } while(isNaN(mes) || mes <1 || mes >12){
-       alert('ok.')
+       
         }
 
 /* 4 - Por fim, peça ao usuário para informar seu ano de nascimento. Além de ser um número
@@ -38,14 +38,20 @@ resposta válida não for conseguida.
        do {
           ano = parseInt(prompt("informe o ano do seu nascimento"))
         } while(isNaN(ano) || ano <1921 || ano >2021){
-       alert('ok, agora vou fazer a soma.')
+       alert('ok, Vou verificar a resposta.')
         }
 
 /* 5 - Declare uma função que receba o dia, o mês e o ano. Dentro dela, some os valores do
 ano e do mês e multiplique o resultado pelo valor do dia. A função deverá retornar o
 resto do valor obtido no cálculo anterior por 4.
 */
-
+function calculo(dia,mes,ano){
+let resultado
+resultado = (ano+mes) *dia 
+resultado = resultado % 4
+ return resultado
+}
+ calculo(dia, mes, ano)
 
 /* 6 Efetue uma chamada à função declarada na etapa 5 e utilize uma estrutura
 switch..case para analisar o retorno da função. Informe com document.write() qual a
@@ -55,7 +61,25 @@ casa a que o usuário pertence, conforme o esquema a seguir:
 ◦ Retorno da função igual a 2: Casa Lacraste
 ◦ Retorno da função igual a 3: Casa Smilingüido
 */
- 
+
+let casa
+switch (calculo(dia, mes, ano)) {
+        case 0 :
+        casa = 'Casa Gado Demais'
+        break
+        case 1 :
+        casa = 'Casa Galo de Rinha'
+        break
+        case 2 :
+        casa = 'Casa Lacraste'
+        break
+        case 3 :
+        casa = 'Casa Smilingüido'
+        break
+
+}
+document.write(`sua casa é: ${casa}`)
+     
     </script>
 </head>
 <body>
