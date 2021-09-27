@@ -11,13 +11,14 @@
 seja um número inteiro válido e esteja na faixa entre 1 e 31. A solicitação deverá ser
 repetida até que se consiga um dia válido.
 */
+// solicita dia nascimento
        let dia
        do {
            dia = parseInt(prompt("informe o dia do seu nascimento"))
-       } while(isNaN(dia) || dia <1 || dia >31){
+       } while(isNaN(dia) || dia < 1 || dia > 31){
        
        }
-
+//solicita mes nascimento
 /* 3 - Solicite ao usuário que informe o mês do seu nascimento. Valide para que o mês
 informado seja um número inteiro válido e esteja entre 1 e 12. Repita a solicitação
 enquanto não obtiver um mês válido.
@@ -25,10 +26,10 @@ enquanto não obtiver um mês válido.
        let mes
        do {
            mes = parseInt(prompt("informe o mes do seu nascimento"))
-        } while(isNaN(mes) || mes <1 || mes >12){
+        } while(isNaN(mes) || mes < 1 || mes > 12){
        
         }
-
+//solicita ano de nascimento
 /* 4 - Por fim, peça ao usuário para informar seu ano de nascimento. Além de ser um número
 inteiro válido, o ano informado deve estar entre 1921 (inclusive) e 2021 (inclusive).
 Assim como nos casos anteriores, a pergunta deverá ser repetida enquanto uma
@@ -45,13 +46,11 @@ resposta válida não for conseguida.
 ano e do mês e multiplique o resultado pelo valor do dia. A função deverá retornar o
 resto do valor obtido no cálculo anterior por 4.
 */
-function calculo(dia,mes,ano){
-let resultado
-resultado = (ano+mes) *dia 
-resultado = resultado % 4
- return resultado
+//efetua o calculo da casa de destino
+function determinarCasa(dia, mes, ano){
+let calc = (ano + mes ) * dia
+return calc % 4
 }
- calculo(dia, mes, ano)
 
 /* 6 Efetue uma chamada à função declarada na etapa 5 e utilize uma estrutura
 switch..case para analisar o retorno da função. Informe com document.write() qual a
@@ -62,8 +61,11 @@ casa a que o usuário pertence, conforme o esquema a seguir:
 ◦ Retorno da função igual a 3: Casa Smilingüido
 */
 
+// chama a função que determina a casa
 let casa
-switch (calculo(dia, mes, ano)) {
+
+//processa o retorno da função que determinou a casa apresentando os respectivos nomes 
+switch (determinarCasa(dia, mes, ano)) {
         case 0 :
         casa = 'Casa Gado Demais'
         break

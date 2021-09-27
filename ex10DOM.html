@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>documento object model (DOM)</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <h1>Documento object model (DOM)</h1>
+    <ol>
+        <li> São paulo</li>
+        <li>Minas gerais</li>
+        <li>Rio de Janeiro</li>
+     </ol>
+     <script>
+         /* manipulação do DOM */
+
+         // 1) captura  o elemento HTML e coloca-lo dentro de uma variavel javaScipt
+        let titulo1 = document.querySelector('h1')
+
+        //2) alterar o conteudo textual do elemento
+        titulo1.textContent = 'Estados da Região Susoeste'
+
+        //capturar mais um elemento
+        let item = document.querySelector('li')// captura o 1º <li>.
+        item.style.color = 'red'
+
+        // captura TODO os elementos <li>
+            let itens = document.querySelectorAll('li')
+        // trocar a cor do Terceiro elemento
+        itens[1].style.color = 'blue'
+        itens[2].style.color = 'pink'
+     </script>
+    
+</body>
+</html>
