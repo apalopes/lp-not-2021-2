@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario Dom</title>
+    <style>
+        *{ /*todos os elementos */
+            font-family: calibri, Arial, sans;
+        }
+        label{
+            /* faz com que a label ocupe uma linha inteira e
+            empurre o input para baixo*/
+            display: block;
+        }
+        div{
+            margin-bottom: 20px;
+        }
+        fieldset{
+            border: 1px solid slategray;
+            border-radius: 10px; /* borda arredondada*/ 
+        }
+        fieldset label{
+            display: inline
+        }
+
+    </style>
+</head>
+<body>
+    <h1> Gerador de Saudação</h1>
+    <div>
+        <label for= "primeiro-nome">primeiro Nome</label>
+        <input id = 'primeiro-nome'> 
+    </div>
+    <div>
+        <label for= "sobrenome">Sobrenome</label>
+        <input id = 'sobrenome'> 
+    </div>
+    <div>
+        <label for= 'forma-trat'>Forma de tratamento</label>
+        <select id = 'Forma-trat'>
+            <option>(Selecione)</option>
+            <option>Vossa majestade</option>
+            <option>Excelentisimo</option>
+            <option>Ilustrissimo/a</option>
+            <option>SR / Sra</option>
+            <option>Vossa Senhoria</option>
+            <option>Cremosíssimo/a</option>
+        </select>
+        <fieldset>
+            <legend>Sexo</legend>
+            <input id="masculino" type='radio'name ="sexo" checked> <!-- checked traz marcado-->
+            <label for = masculino>masculino</label>
+            <br>
+            <input id="feminino" type='radio'name ="sexo">
+            <label for = feminino>Feminino</label>
+        </fieldset>
+    </div>
+    
+</body>
+</html>
