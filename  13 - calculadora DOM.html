@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora DOM</title>
+         
+</head>
+<body>
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1" type="number">
+    </div>
+
+    <div>
+        <label for="oper">Operação</label>
+        <select id="oper">
+            <option>(Selecione)</option>
+            <option>Soma (+)</option>
+            <option>Subtração (-)</option>
+            <option>Multiplicação (*)</option>
+            <option>Divisão (/)</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2" type="number">
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+
+    <div id="resultado"></div>
+    
+    <script>
+        
+        // 1) Captura dos elementos
+        const num1 = document.getElementById('num1')
+        const erroNum1 = document.getElementById('erro-num1')
+        const oper = document.getElementById('oper')
+        
+        const num2 = document.querySelector('#num2')
+        const resultado = document.querySelector('#resultado')
+        const calcular = document.querySelector('#calcular')
+  
+        function efetuar() {
+        
+            
+           let valnum1 = parseFloat(num1.value) // poderia ter sido parseFloat() tb
+           let valnum2 = parseFloat(num2.value)
+           let valido = true
+           
+           console.log({valnum1}, num1.value)
+  
+           if(isNaN(valnum1)) {
+              alert('Informe um primeiro número válido.')
+              num1.focus()
+              erroNum1.style.visibility = 'visible'
+              valido = false
+           }
+           else if(oper.selectedIndex <= 0) {
+              alert('Selecione uma operação válida.')
+              oper.focus()
+              valido = false
+           }
+           else if (isNaN(valnum2)) {
+              alert('Informe um segundo número válido.')
+              num2.focus()
+              valido = false
+           }
+           else if(valnum2 == 0 && (oper.selectedIndex == 4 || oper.selectedIndex == 6)) {
+              alert('Não é possível efetuar divisão por zero.')
+              num2.focus()
+              valido = false
+           }
+  
+           if(valido) {
+              let res
+  
+              switch(oper.selectedIndex) {
+                 case 1: // Adição
+                    res = valnum1 + valnum2
+                    break
+  
+                 case 2: // Subtração
+                    res = valnum1 - valnum2
+                    break
+  
+                 case 3: // Multiplicação
+                    res = valnum1 * valnum2
+                    break
+  
+                 case 4: // Divisão
+                    res = valnum1 / valnum2
+                    break
+  
+                 case 5: // Potenciação
+                    res = valnum1 ** valnum2 // Ou: Math.pow(valNum1, valNum2)
+                    break
+                 
+                 case 6: // Resto da divisão
+                    res = valnum1 % valnum2
+  
+              }
+  
+              // Formatar separador de casas decimais para o 
+              // uso do português brasileiro
+              resultado.innerText = res.toLocaleString('pt-BR')
+              
+           }
+  
+        }
+  
+        function limpaResultado() {
+           resultado.innerText = ''
+        }
+  
+        calcular.addEventListener('click', efetuar)
+        
+        // Quando sai do input ou com os botões de spin
+        num1.addEventListener('change', limpaResultado) 
+        // Efeito imediato no pressionamento de teclas
+        num1.addEventListener('keydown', limpaResultado)
+        
+        oper.addEventListener('change', limpaResultado)
+        
+        num2.addEventListener('change', limpaResultado)
+        num2.addEventListener('keydown', limpaResultado)
+  
+     </script>
+  </body>
+  </html>
