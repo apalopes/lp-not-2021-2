@@ -20,10 +20,11 @@
                 das estações City Petrópolis, no extremo norte, e Aeroporto
                 IV, no extremo sul.
                 */
-                let estacao = []        // Forma moderna               
-                estacao.push('Santa Teresinha', 'Estação', 'Centro', 'Jardim Lima', 'Aeroporto I')
-                for(let i = 0; i < linha1.length; i++) {
-         document.write(linha1[i] + '<br>')
+                
+            let linha= []        // Forma moderna               
+            linha.push('Santa Teresinha', 'Estação', 'Centro', 'Jardim Lima', 'Aeroporto I')
+            for(let i = 0; i < linha.length; i++) {
+            document.write(linha[i] + '<br>')
       }
       // Traço horizontal
       document.write('<hr>')
@@ -34,10 +35,10 @@
                 passe um traço horizontal (<hr>).
 */
 
-linha1.unshift('City Petrópolis')
-      linha1.push('Aeroporto IV')
+    linha.unshift('City Petrópolis')
+      linha.push('Aeroporto IV')
 
-      for(let estacao of linha1) {
+      for(let estacao of linha) {
          document.write(estacao + '<br>')
       }
       document.write('<hr>')
@@ -60,14 +61,14 @@ linha1.unshift('City Petrópolis')
             e Champagnat.
 */
 
-let posEstacao = linha1.indexOf('Estação')
-      linha1.splice(posEstacao, 0, 'Vila Imperador')
+let posEstacao = linha.indexOf('Estação')
+      linha.splice(posEstacao, 0, 'Vila Imperador')
 
       // Usando indexOf diretamente sem uso de variável auxiliar
-      linha1.splice(linha1.indexOf('Aeroporto I'), 0, 'Jardim Alvorada')
+      linha.splice(linha.indexOf('Aeroporto I'), 0, 'Jardim Alvorada')
 
-      for(let i = linha1.length - 1; i >= 0; i--) {
-         document.write(linha1[i] + '<br>')
+      for(let i = linha.length - 1; i >= 0; i--) {
+         document.write(linha[i] + '<br>')
       }
       document.write('<hr>')
 
@@ -84,14 +85,14 @@ let posEstacao = linha1.indexOf('Estação')
 
       // Na posição antes ocupada pela estação Centro, será excuído 1 elemento
       // e inseridos outros dois elementos no lugar
-      linha1.splice(linha1.indexOf('Centro'), 1, '9 de Julho', 'Champagnat')
+      linha.splice(linha.indexOf('Centro'), 1, '9 de Julho', 'Champagnat')
 
-for(let i = 0; i < linha1.length; i++) {
-   document.write(linha1[i] + '<br>')
+for(let i = 0; i < linha.length; i++) {
+   document.write(linha[i] + '<br>')
 }
 document.write('<hr>')
 
-/*
+        /*
                     
             5) Modifique o vetor de acordo com as alterações.
                 Faça um loop FOR...OF para exibir as estações e depois
@@ -100,15 +101,15 @@ document.write('<hr>')
 
     
 
-linha1.pop() // Última estação
-linha1.pop() // Penúltima estação
+linha.pop() // Última estação
+linha.pop() // Penúltima estação
 
 // Alternativa
 // linha1.splice(linha1.length - 2) // Apaga a partir da posição encontrada
 
-linha1.splice(linha1.indexOf('Santa Teresinha'), 1)
+linha.splice(linha.indexOf('Santa Teresinha'), 1)
 
-for(let estacao of linha1) {
+for(let estacao of linha) {
    document.write(estacao + '<br>')
 }      
 
