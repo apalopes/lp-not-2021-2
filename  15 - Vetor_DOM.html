@@ -12,11 +12,10 @@
     </ul>
     <script>
                 
-        /*
-            1) Crie um vetor vazio.
+        /*1) Crie um vetor vazio 
+
         
-            2) Usando o método de inserção NO INÍCIO do vetor, colocado os seguintes Estados
-               nenhum vetor:
+            2) Usando o método de inserção NO INÍCIO do vetor, colocado os seguintes Estados:
                São paulo
                Santa catarina
                Rio Grande do Sul
@@ -28,6 +27,12 @@
             3) Percorra o vetor com um loop for..of, crie um item da lista para cada um dos elementos do vetor e insira-o na lista não ordenada.
 
         */
+        let Estados= [] 
+       
+        Estados.push('São Paulo', 'Santa Catarina', 'Rio Grande do Sul', 'Rio de janeiro', 'Paraná', 'Minas Gerais', 'Espirito Santo')
+            for(let i = 0; i < Estados.length; i++) {
+            document.write(Estados[i] + '<br>')
+      }
                   
     </script>
 </body>
