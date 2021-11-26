@@ -1,9 +1,10 @@
-<! DOCTYPE html>
-<html lang = "pt-br">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
-    <title> Modelo de documento HTML </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
     <h1> Estados do Sudeste e do Sul do Brasil </h1>
@@ -12,10 +13,13 @@
     </ul>
     <script>
                 
-        /*1) Crie um vetor vazio 
+      
 
-        
-            2) Usando o método de inserção NO INÍCIO do vetor, colocado os seguintes Estados:
+        let estados = []
+
+        /*
+              2) Usando o método de inserção NO INÍCIO do vetor, colocado os seguintes Estados
+               nenhum vetor:
                São paulo
                Santa catarina
                Rio Grande do Sul
@@ -23,17 +27,35 @@
                Paraná
                Minas Gerais
                Espírito Santo
+        */
+        
+
+        estados.unshift ('São Paulo')
+        estados.unshift ('Santa Catarina')
+        estados.unshift ('Rio Grande do Sul')
+        estados.unshift ('Rio de Janeiro')
+        estados.unshift ('Paraná')
+        estados.unshift ('Minas Gerais')
+        estados.unshift ('Espírito Santo')
+
+               
+        /*
         
             3) Percorra o vetor com um loop for..of, crie um item da lista para cada um dos elementos do vetor e insira-o na lista não ordenada.
 
         */
-        let Estados= [] 
-       
-        Estados.push('São Paulo', 'Santa Catarina', 'Rio Grande do Sul', 'Rio de janeiro', 'Paraná', 'Minas Gerais', 'Espirito Santo')
-            for(let i = 0; i < Estados.length; i++) {
-            document.write(Estados[i] + '<br>')
-      }
+
+        //Captura a lista não ordenada
+        const lista = document.querySelector ('ul')
+
+        for(let estado of estados) {
+            const item = document.createElement ('li')
+            item.textContent = estado
+            lista.appendChild (item)
+        }
                   
     </script>
+</body>
+</html>
 </body>
 </html>
