@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -83,22 +83,6 @@
         }
     </style>  
 
-    <script>
-            
-        const multipl = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-  function tabuada(){
-  var num = parseInt(document.getElementById("num").value);
-  var resposta = document.getElementById('resposta');
-  var tabuada='';
-
-  for(var count=1; count<=10 ; count++)
-   tabuada += num+" x "+count+" = "+
-               num*count+"<br />";
-  
-  resposta.innerHTML = tabuada;
-}
-    </script>
-
 </head>
 
 <body>
@@ -124,15 +108,75 @@
 
         <div>
             <button>Visualizar!</button>
-            
         </div>
 
         <div id="tabuada"></div>
-        
     </div>
 
+    <script>
+
+        // A seção "script" precisa ser movida para o final da seção "body"
+        // porque haverá manipulação de DOM
+            
+        const multipl = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+        // 3. Com JavaScript, faça a captura dos elementos HTML que julgar necessários.
+        const tabuada = document.querySelector('#tabuada')
+        const cxSelecao = document.querySelector('select')
+        const botao = document.querySelector('button')
+
+        // 4. Declare uma função que receba como parâmetro um número inteiro. Dentro   
+        // dessa função, o vetor multipl (já existente no código; não deve ser modificado) 
+        // deve serpercorrido usando um loop for.
+
+        function montarTabuada(num) {
+
+            // 5. Dentro do loop for, crie um novo parágrafo e coloque, dentro de sua
+            // propriedade textContent, a linha correspondente da tabuada, isto é, a x b = c, 
+            // onde: a é o númerorecebido como parâmetro pela função; b é o elemento da 
+            // vez do vetor multipl; e c é o resultado da multiplicação de a por b.
+
+            // O for precisará ser invertido porque os números multiplicadores dentro do
+            // vetor multipl estão em ordem descrescente
+            for(let i = multipl.length - 1; i >= 0; i--) {
+                // Cria um novo parágrafo
+                let parag = document.createElement('p') 
+                
+                // Coloca a linha da tabuada dentro do parágrafo
+                parag.textContent = `${num} x ${multipl[i]} = ${num * multipl[i]}`
+
+                // 6. Ainda dentro do loop for, insira o novo parágrafo criado 
+                // como filho do elemento cujo id é tabuada.
+                tabuada.appendChild(parag)
+            }
+
+        }
+
+        // 7. Declare uma outra função que
+        function exibirTabuada() {
+            // a) ajuste o valor do textContent do elemento tabuada para uma string vazia;
+            tabuada.textContent = ''
+
+            // b) verifique se o usuário realmente efetuou a seleção de um número 
+            // válido da caixa de seleção;
+            if(cxSelecao.selectedIndex <= 0) {
+                alert('Selecione um número para exibir a tabuada!')
+                cxSelecao.focus()
+            }
+            // c) caso tenha passado na validação, efetue uma chamada à função
+            // declarada no passo 4, passando a ela o número escolhido pelo 
+            // usuário na lista
+            else {
+                montarTabuada(cxSelecao.selectedIndex)
+            }
+        }
+
+        // 8. Associe a função declarada no passo 7 ao evento clique do 
+        // botão existente na página.
+        botao.addEventListener('click', exibirTabuada)
+
+    </script>
 
 </body>
 
-</html>
-           
+</html>           
