@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+    <style>
+        
+        * {
+            font-family: Oxanium, Arial, sans-serif;
+        }
+
+        html,
+        body {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            font-size: 12pt;
+            line-height: 18pt;
+            color: #444;
+        }
+
+        body {
+            background-color: olivedrab;
+            background-image: linear-gradient(lightgreen 50%, olivedrab);
+            background-repeat: no-repeat;
+            padding: 0;
+        }
+
+        body>div {
+            background: whitesmoke;
+            margin: 3%;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: olivedrab;
+            text-shadow: 2px 2px 2px rgba(107, 142, 35, 0.5);
+
+        }
+
+        div>div {
+            padding: 10px;
+            width: 70%;
+            max-width: 90%;
+            min-width: 250px;
+            margin: 1% auto;
+            text-align: center;
+        }
+
+        div label {
+            display: block;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 8px;
+            border-radius: 8px;
+            color: white;
+            background-color: olivedrab;
+        }
+
+        p {
+            display: inline-block;
+            width: 30%;
+            margin: 0;
+        }
+
+        p span {
+            font-weight: bold;
+            color: olivedrab;
+        }
+
+        div div:last-of-type {
+            background-color: mintcream;
+            border-radius: 12px;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <h1>Concentrador Numérico</h1>
+
+    <div>
+        <label> Informe um Número </label>
+        <input id="num" type="number">                      <!-- primeiro objeto-->
+    </div>
+    <div>
+        <button id ="concentrar"> Concentrar</button>       <!-- Segundo objeto-->
+    </div>
+    <div>
+        <p>
+        "Quantidade: "
+        <span id ="quant">0</span>                           <!-- Terceiro objeto-->
+        </p>
+
+        <p>
+        "Média: "
+        <span id ="media">0</span>                           <!-- Quarto objeto-->
+        </p>
+
+        <p>
+        "Soma: "
+        <span id ="soma">0</span>                            <!-- Quinto objeto-->
+        </p>
+
+    </div>    
+    <!--Início da Secção e Manipulação DOM-->
+    <script>
+        
+        
+        /*Com JavaScript, capture todos os elementos da parte HTML que tenham id. Utilize um
+        dos métodos para capturar metade dos elementos e o outro método para capturar
+        os demais.*/
+        
+        //Questão 3 - Capturando os Elementos HTML
+
+        const infornum = document.querySelector('#num')
+        const buttonum = document.querySelector('#concentar')
+        const quantidade = document.querySelector('quant')
+        const meDia = document.getElementById('media')
+        const soMa= document.getElementById('soma')
+
+
+        // Questão 4. Declaração de um vetor vazio.
+
+
+        const vet = []
+
+
+        /* Questão 5. Declare uma função que receba um vetor de números, calcule a soma de seus
+        elementos e retorne o resultado. Dentro da função, utilize um loop for..of para iterar
+        entre os elementos do vetor.*/
+        
+        function recebnum(num1){
+
+        for(let i = vet.length; i<0 ;i++){
+
+        tabuada.appendChild(text1)
+        }
+        }
+
+        /*
+        Questão 6. Declare outra uma função que 
+        a) leia o valor digitado pelo usuário;
+        b) verifique se o valor digitado corresponde ao número válido;
+        */
+        
+        function validacao(){
+
+                     
+            if (isNaN(infornum.value)){
+                alert('Insira um Número Válido')
+                infornum.focus()
+                return false
+            }
+                                
+            if(infornum.value =='') {
+                alert('Insira um Número para Calcular')
+                infornum.focus()
+                return false         
+            }
+
+            else{
+                recebnum(vet.unshift[i])         
+            }
+          
+            return true 
+        }   
+
+
+
+    </script>
+
+    
+
+
+
+</body>
+</html>
